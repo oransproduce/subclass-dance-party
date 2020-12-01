@@ -29,6 +29,11 @@ makeBlinkyDancer.prototype.step = function() {
   // a way to make it loop, but with a timeout between recursive calls
   makeDancer.prototype.step.call(this);
 
+
   // a way to make it toggle
   this.$node.toggle();
+};
+
+makeBlinkyDancer.prototype.lineUp = function (height) {
+  makeDancer.prototype.setPosition.call(this, height, 0);
 };
