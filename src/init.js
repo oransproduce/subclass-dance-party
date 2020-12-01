@@ -2,9 +2,11 @@ $(document).ready(function() {
   window.dancers = [];
 
   $('.lineUp').on('click', function(event) {
-    debugger;
+    total = 0;
     window.dancers.forEach(function(item, index) {
-      item.lineUp(index * 35 + 32);
+      total += item.height;
+      item.lineUp(total + 32);
+
     });
   });
   $('.addDancerButton').on('click', function(event) {
@@ -27,7 +29,7 @@ $(document).ready(function() {
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
     // make a dancer with a random position
-    var dancerHeight = $("body").height() * Math.random() + 32;
+    var dancerHeight = $("body").height() * Math.random() + 100;
     var dancerLeft = $("body").width() * Math.random();
     var dancer = new dancerMakerFunction(
       dancerHeight,
@@ -36,13 +38,15 @@ $(document).ready(function() {
     );
     // if this dancer is an assasin:
     if (dancerMakerFunctionName === 'makeAssassinDancer') {
-      debugger;
       // loop through windows.dancer array and calculate distance of each dancer in array to current assassinDancer
       window.dancers.forEach(function(dancer) {
         // if that distance is within a certain length, we mimic the logic of set position to change that elements css to a new color
         var distance = Math.sqrt(Math.pow(dancer.top - dancerHeight, 2) + Math.pow(dancer.left - dancerLeft, 2));
-        if (distance < 100 && !(dancer instanceof makeAssassinDancer)) {
-          dancer.$node.css('border-color', 'purple');
+        if (distance < 250 && !(dancer instanceof makeAssassinDancer || dancer instanceof makeSquareDancer)) {
+          dancer.$node.css('background-color', 'rgba(0, 255, 0, 0.3)');
+        }
+        if (distance < 250 && dancer instanceof makeExpanderDancer) {
+          dancer.$node.css('border-color', 'rgba(0, 255, 0, 0.5)');
         }
       });
     }

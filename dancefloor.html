@@ -9,12 +9,20 @@
     <script src="src/squareDancer.js"></script>
     <script src="src/rectangleDancer.js"></script>
     <script src="src/assassinDancer.js"></script>
+    <script src="src/expander.js"></script>
   </head>
   <body>
     <div class="topbar">
-      <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a><a href="#" class="addDancerButton" data-dancer-maker-function-name="makeSquareDancer">add a square dancer</a><a href="#" class="addDancerButton" data-dancer-maker-function-name="makeRectangleDancer">add a rectangle dancer</a><a href="#" class="addDancerButton" data-dancer-maker-function-name="makeAssassinDancer">add an assassin dancer</a><a href="#" class="lineUp">Line Up!</a>
+      <span class="title">Pandemic Dance Party</span>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a teemo dancer</a><a href="#" class="addDancerButton alternate" data-dancer-maker-function-name="makeSquareDancer">add an imposter dancer</a><a href="#" class="addDancerButton" data-dancer-maker-function-name="makeRectangleDancer">add a mooCow dancer</a><a href="#" class="addDancerButton alternate" data-dancer-maker-function-name="makeAssassinDancer">add a pandemic dancer</a><a href="#" class="addDancerButton" data-dancer-maker-function-name="makeExpanderDancer">add an expander dancer</a><a href="#" class="lineUp alternate">Line Up!</a>
     </div>
+    <audio id="danceAudio" controls>
+      <source src="Audio/OutKast-Hey-Ya.mp3" type="audio/mp3">
+    </audio>
+    <img class='background' src='https://c1.staticflickr.com/1/499/31599055124_51abc1a2a5_o.jpg'>
     <script src="src/init.js"></script>
+    <script>
+      document.getElementById("danceAudio").volume = 0.15;
+    </script>
   </body>
 </html>

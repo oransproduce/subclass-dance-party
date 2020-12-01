@@ -8,6 +8,7 @@ var makeDancer = function(top, left, timeBetweenSteps, nodeClass = 'dancer') {
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;
+  this.height = 20;
   // dancer.step = function() {
   //   // the basic dancer doesn't do anything interesting at all on each step,
   //   // it just schedules the next step

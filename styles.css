@@ -3,45 +3,76 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
   font-size: 18px;
+  background-image: url('/Images/map.jpg');
+  background-color:#444;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: rgb(200, 192, 238);
+  font-family: "Gill Sans", sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+    background: -moz-linear-gradient(top, #666, #000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+}
+a:hover {
+  color: turquoise;
 }
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
+  text-decoration: none;
+}
+
+.alternate {
+  background-color: #777;
+  text-decoration: none;
 }
 .topbar{
   height:32px;
   background-color: #555;
 }
 .title{
-  background-color: #777;
+  background-color: rgb(65, 63, 63);
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  background-color: rgba(255, 0, 0, 0.4);
   position:absolute;
+  width: 50px;
+  height: auto;
 }
 
 .square{
-  border:10px solid blue;
   position:absolute;
+  width: 15px;
+  height: auto;
 }
 
 .rectangle{
-  height: 10px;
-  width: 15px;
-  border:10px solid green;
-  position:absolute;
+  background-color: rgba(14, 124, 226, 0.4);
+  height: auto;
+  width: auto;
+  position: absolute;
 }
 .assassin{
-  border:10px solid black;
-  position:absolute;
+  position: absolute;
 }
 .lineUp{
-  padding:5px 12px;
-  float:right;
+  padding: 5px 12px;
+  float: right;
+}
+
+.expander{
+  border: 2px solid orange;
+  position: absolute;
+}
+
+.background{
+  width:100%;
+  height:auto;
+}
+
+#danceAudio {
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }

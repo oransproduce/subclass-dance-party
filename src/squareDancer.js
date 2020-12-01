@@ -1,7 +1,25 @@
 var makeSquareDancer = function (top, left, timeBetweenSteps) {
-  debugger;
   makeDancer.call(this, top, left, timeBetweenSteps, 'square');
-  // this.$node = $('<span class="square"></span>');
+  // this.$node.mouseover(function() {
+
+  //   $(this).append($('<img src="Images/assassinDancer.gif">'));
+  // });
+  this.height = 100;
+  $(this.$node).append($('<img src="Images/masterChief.gif">'));
+
+  $(this.$node).one('mouseover', function () {
+    // $(".square").hover(
+    //   function() {
+    //     $(this).attr("src", "masterChief.gif");},
+    //   function() {
+    //     $(this).attr("src", "assassinDancer.gif");
+    //   });
+    // this.$node = $('<span class="square"></span>');
+    $(this).empty();
+    $(this).append($('<span class="square"><img src="Images/assassinDancer.gif"></span>'));
+    //$(this).attr('src', 'Images/assassinDancer.gif');
+    $(this).css('border', 0);
+  });
   // makeDancer.prototype.setPosition.call(this, top, left);
 };
 
@@ -12,6 +30,6 @@ makeSquareDancer.prototype.step = function () {
   makeDancer.prototype.step.call(this);
 };
 
-makeSquareDancer.prototype.lineUp = function (height) {
-  makeDancer.prototype.setPosition.call(this, height, 0);
+makeSquareDancer.prototype.lineUp = function (total) {
+  makeDancer.prototype.setPosition.call(this, total, 0);
 };
